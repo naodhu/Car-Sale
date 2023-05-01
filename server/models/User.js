@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose";
 import bcrypt from "bcryptjs";
-const { genSalt, hash, compare } = bcrypt;
+const { compare } = bcrypt;
 
 const UserSchema = new Schema({
   name: {
@@ -18,15 +18,6 @@ const UserSchema = new Schema({
     minlength: 6,
     select: false,
   },
-});
-
-UserSchema.pre("save", async function (next) {
-  if (!this.isModified("password")) {
-    next();
-  }
-
-  const salt = await genSalt(10);
-  this.password = await hash(this.password, salt);
 });
 
 UserSchema.methods.matchPassword = async function (enteredPassword) {

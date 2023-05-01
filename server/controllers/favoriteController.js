@@ -17,8 +17,8 @@ export const addFavorite = async (req, res) => {
   }
 
   const existingFavorite = await Favorite.findOne({
-    user: req.user._id,
-    car: car._id,
+    userId: req.user._id, // Updated from user to userId
+    carId: car._id, // Updated from car to carId
   });
 
   if (existingFavorite) {
@@ -26,8 +26,8 @@ export const addFavorite = async (req, res) => {
   }
 
   const newFavorite = new Favorite({
-    user: req.user._id,
-    car: car._id,
+    userId: req.user._id, // Updated from user to userId
+    carId: car._id, // Updated from car to carId
   });
 
   await newFavorite.save();

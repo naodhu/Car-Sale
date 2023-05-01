@@ -25,6 +25,11 @@ export const register = async (req, res) => {
 
   await newUser.save();
 
+  // Log a message indicating a successful registration
+  console.log(
+    `User "${newUser.name}" (ID: ${newUser._id}) has successfully registered.`
+  );
+
   const token = jwt.sign({ id: newUser._id }, JWT_SECRET, { expiresIn: "1d" });
 
   res.status(201).json({ token, user: newUser });
@@ -43,10 +48,15 @@ export const login = async (req, res) => {
 
   console.log("User:", user);
 
-  const isMatch = await bcrypt.compare(password, user.password);
+  const isMatch = await user.matchPassword(password); // Use the matchPassword method here
   if (!isMatch) {
     return res.status(400).json({ message: "Invalid credentials" });
   }
+
+  // Log a message indicating a successful login
+  console.log(
+    `User "${user.name}" (ID: ${user._id}) has successfully logged in.`
+  );
 
   const token = jwt.sign({ id: user._id }, JWT_SECRET, { expiresIn: "1d" });
 
