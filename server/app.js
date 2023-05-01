@@ -25,7 +25,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/favorites", favoriteRoutes);
 
 // Fetch cars from API and save to database
-fetchCars();  
+fetchCars();
 
 // Error handling middleware
 app.use(errorHandler);
