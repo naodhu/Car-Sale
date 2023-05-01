@@ -6,6 +6,7 @@ import favoriteRoutes from "./routes/favoriteRoutes.js";
 import errorHandler from "./middleware/errorHandler.js";
 import { connectDB } from "./config/db.js";
 import { fetchCars } from "./utils/fetchCars.js";
+import path from "path";
 
 
 const app = express();
@@ -18,6 +19,11 @@ app.use(json());
 
 app.use(cors());
 
+// Render the React app
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client/build/index.html"));
+  });
+
 
 // Routes
 app.use("/api/cars", carRoutes);
@@ -25,7 +31,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/favorites", favoriteRoutes);
 
 // Fetch cars from API and save to database
-fetchCars();  
+fetchCars();
 
 // Error handling middleware
 app.use(errorHandler);
@@ -35,3 +41,19 @@ app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 
 //nosecrete
+
+// front end
+import React from "react";
+import "./App.css";
+
+function App() {
+  return (
+    <div className="App">
+      <h1>Hello, world!</h1>
+    </div>
+  );
+}
+
+export default App;
+
+//This code defines a simple [React component](poe://www.poe.com/_api/key_phrase?phrase=React%20component&prompt=Tell%20me%20more%20about%20React%20component.) that displays a heading.
