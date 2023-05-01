@@ -35,3 +35,6 @@ app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 
 //nosecrete
+
+// Navigate to index.html
+window.location.href = '/public/index.html';
