@@ -4,7 +4,7 @@ A MERN (MongoDB, Express, React, and Node.js) stack web application that allows 
 
 ## Features
 
-- \*earch functionality: Users can search for cars based on make, model, year, and other criteria.
+- Search functionality: Users can search for cars based on make, model, year, and other criteria.
 - Favorites list: Users can save their favorite cars to a personal list.
 - Compare functionality: Users can compare the technical specifications of their favorite cars side by side.
 - User accounts: Users can create accounts, log in, and manage their search history.
