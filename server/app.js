@@ -42,5 +42,21 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 
+<<<<<<< Updated upstream
+=======
+//nosecrete
+
+// front end
+import React from "react";
+import "./App.css";
+
+function App() {
+  return
+/* <div className="App">
+      <h1>Hello, world!</h1>
+    </div> */
+}
+
+>>>>>>> Stashed changes
 export default App;
 //nosecrete
