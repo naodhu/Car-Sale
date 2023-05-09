@@ -11,7 +11,6 @@
     "server": "node server/index.js",
     "app": "concurrently npm \"npm run server\" \"npm run client\""
   },
- 
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
