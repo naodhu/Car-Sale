@@ -75,11 +75,8 @@ npm start
 - Tadhgin White - https://github.com/Tadhgin
 
 ## Demo Screenshots
-
-
-
-
-
+<img width="1080" src="./Screenshot (92).png">
+<img width="1080" src="./Screenshot (94).png">
 
 
 
