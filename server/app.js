@@ -7,6 +7,11 @@ import errorHandler from "./middleware/errorHandler.js";
 import { connectDB } from "./config/db.js";
 import { fetchCars } from "./utils/fetchCars.js";
 import path from "path";
+<<<<<<< Updated upstream
+=======
+import React from "react";
+import ReactDOM from "react-dom";
+>>>>>>> Stashed changes
 
 
 const app = express();
