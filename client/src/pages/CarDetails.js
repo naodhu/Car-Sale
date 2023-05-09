@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getCar } from "../services/carService";
+import { getCars } from "../services/carService";
 
 const CarDetails = () => {
   const { id } = useParams();
   const [car, setCar] = useState(null);
 
   useEffect(() => {
-    getCar(id).then((carData) => setCar(carData));
+    getCars(id).then((carData) => setCar(carData));
   }, [id]);
 
   if (!car) {

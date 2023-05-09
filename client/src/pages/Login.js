@@ -1,17 +1,17 @@
-import React from "react";
-import LoginForm from "../components/auth/LoginForm";
+// /client/src/pages/Login.js
+import React from 'react';
+import LoginForm from '../components/auth/LoginForm';
 
 const Login = () => {
-  const handleLogin = (email, password) => {
-    console.log("Logging in with email:", email, "password:", password);
-  };
-
   return (
-    <div>
+    <div className="form-container">
       <h1>Login</h1>
-      <LoginForm onLogin={handleLogin} />
+      <LoginForm />
     </div>
   );
 };
 
 export default Login;
+
+
+

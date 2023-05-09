@@ -1,16 +1,20 @@
-import React from "react";
-import SearchForm from "../components/search/SearchForm";
+// src/pages/Home.js
+import SearchForm from "../components/SearchForm";
+
+// import Filter from "../components/Filter";
+import Navbar from "../components/Navbar";
+import CarList from "../components/CarList";
+import Footer from "../components/Footer";
+// import { useSpring, animated } from "@react-spring/web";
 
 const Home = () => {
-  const handleSearch = (searchTerm) => {
-    console.log("Search for:", searchTerm);
-  };
-
   return (
-    <div>
-      <h1>Welcome to the Car Comparison App</h1>
-      <SearchForm onSearch={handleSearch} />
-    </div>
+    <>
+      <Navbar />
+      <SearchForm />
+      <CarList />
+      <Footer />
+    </>
   );
 };
 

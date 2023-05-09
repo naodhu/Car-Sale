@@ -1,13 +1,23 @@
-import React from "react";
+class CompareItem {
+  constructor(car) {
+    this.car = car;
+  }
 
-const CompareItem = ({ car }) => {
-  return (
-    <div>
-      <h3>{car.name}</h3>
-      <p>Price: {car.price}</p>
-      <p>Year: {car.year}</p>
-    </div>
-  );
-};
+  compareCategory(carB) {
+    return this.car.Category.localeCompare(carB.Category);
+  }
+
+  compareMake(carB) {
+    return this.car.Make.localeCompare(carB.Make);
+  }
+
+  compareModel(carB) {
+    return this.car.Model.localeCompare(carB.Model);
+  }
+
+  compareYear(carB) {
+    return this.car.Year - carB.Year;
+  }
+}
 
 export default CompareItem;

@@ -1,9 +1,38 @@
 import Car from "../models/Car.js";
 
-// Get all cars
+// Get all cars or search for cars
 export const getCars = async (req, res) => {
-  const cars = await Car.find();
-  res.status(200).json({ cars });
+  try {
+    const { searchTerm, ...filters } = req.query;
+
+    // Build the query object based on the filters and search term
+    let query = {};
+    for (const key in filters) {
+      if (filters[key]) {
+        query[key] = filters[key];
+      }
+    }
+
+    if (searchTerm) {
+      const numericSearchTerm = parseInt(searchTerm, 10);
+      const yearCondition = isNaN(numericSearchTerm)
+        ? []
+        : [{ Year: numericSearchTerm }];
+
+      query.$or = [
+        { Make: { $regex: searchTerm, $options: "i" } },
+        { Model: { $regex: searchTerm, $options: "i" } },
+        ...yearCondition,
+      ];
+    }
+
+    const cars = await Car.find(query);
+    res.status(200).json({ cars });
+  } catch (error) {
+    res
+      .status(500)
+      .json({ message: "An error occurred while fetching cars", error });
+  }
 };
 
 // Get a car by ID

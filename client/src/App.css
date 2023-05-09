@@ -1,38 +1,75 @@
-.App {
-  text-align: center;
+/* /client/src/App.css */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1, h2, h3, p {
+  margin: 0 0 1rem 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input[type='text'], input[type='email'], input[type='password'] {
+  width: 100%;
+  padding: 0.4rem;
+  margin: 0 0 1rem 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+button {
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #555;
+}
+
+.form-container {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #f4f4f4;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.search-result, .favorite-item {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+
+
+
+/* /client/src/App.css */
+.search-result {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.favorite-item {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+
+
+/* /client/src/App.css */
+.compare-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.compare-item {
+  flex: 0 0 calc(50% - 1rem);
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
 }

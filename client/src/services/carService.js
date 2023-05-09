@@ -1,11 +1,15 @@
-import api from "./api";
+// /client/src/services/carService.js
+import axios from "axios";
 
-export const searchCars = async (searchTerm) => {
-  const response = await api.get("/cars", { params: { q: searchTerm } });
-  return response.data;
-};
+export const getCars = async (filters = {}, searchTerm = "") => {
+  const response = await axios.get("/api/cars", {
+    params: {
+      ...filters,
+      searchTerm,
+    },
+  });
 
-export const getCar = async (id) => {
-  const response = await api.get(`/cars/${id}`);
+  console.log(response);
+
   return response.data;
 };

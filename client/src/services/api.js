@@ -1,10 +1,8 @@
+// /client/src/services/api.js
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://api.example.com", // Replace with your API base URL
-  headers: {
-    "Content-Type": "application/json",
-  },
+  baseURL: "http://localhost:3001/api",
 });
 
 export default api;

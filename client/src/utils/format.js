@@ -1,8 +1,7 @@
-export const formatPrice = (price) => {
-  return `$${price.toFixed(2)}`;
-};
-
-export const formatDate = (dateString) => {
-  const date = new Date(dateString);
-  return date.toLocaleDateString();
-};
+// /client/src/utils/format.js
+export function formatCurrency(value) {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  }).format(value);
+}

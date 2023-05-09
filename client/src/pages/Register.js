@@ -1,15 +1,12 @@
+// /client/src/pages/Register.js
 import React from "react";
 import RegisterForm from "../components/auth/RegisterForm";
 
 const Register = () => {
-  const handleRegister = (email, password) => {
-    console.log("Registering with email:", email, "password:", password);
-  };
-
   return (
-    <div>
+    <div className="form-container">
       <h1>Register</h1>
-      <RegisterForm onRegister={handleRegister} />
+      <RegisterForm />
     </div>
   );
 };
